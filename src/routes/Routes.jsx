@@ -20,7 +20,11 @@ export const router = createBrowserRouter
       element : <Books />
 
     }
-  ]
+  ],
+
+  errorElement: <div>
+    <h1 className="text-3xl text-red-500">404 - Page Not Found</h1>
+  </div>
 }
 
 
