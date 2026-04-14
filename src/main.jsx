@@ -12,28 +12,10 @@ import {
 import MainLayout from './Layout/MainLayout.jsx';
 import Homepage from './pages/Homepage/Homepage.jsx';
 import Books from './pages/Books/Books.jsx';
+import { router } from './routes/Routes.jsx';
 
 
-const router = createBrowserRouter([
-{
-  path: "/",
-  element: <MainLayout />,
-  children: [
-    {
-      index: true,
-      element: <Homepage />
 
-    },
-    {
-      path: "/books",
-      element : <Books />
-
-    }
-  ]
-}
-
-
-]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
