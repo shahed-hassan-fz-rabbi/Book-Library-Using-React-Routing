@@ -2,13 +2,16 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Homepage from "../pages/Homepage/Homepage";
 import Books from "../pages/Books/Books";
+import ErrorPage from "../pages/ErrorPages/ErrorPages";
 
 
 export const router = createBrowserRouter
 ([
+
 {
   path: "/",
   element: <MainLayout />,
+   errorElement: <ErrorPage />,
   children: [
     {
       index: true,
@@ -16,15 +19,13 @@ export const router = createBrowserRouter
 
     },
     {
-      path: "/books",
+      path: "books",
       element : <Books />
 
     }
   ],
 
-  errorElement: <div>
-    <h1 className="text-3xl text-red-500">404 - Page Not Found</h1>
-  </div>
+ 
 }
 
 
