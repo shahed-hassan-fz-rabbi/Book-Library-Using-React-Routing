@@ -9,12 +9,27 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
+import MainLayout from './Layout/MainLayout.jsx';
+import Homepage from './pages/Homepage/Homepage.jsx';
+import Books from './pages/Books/Books.jsx';
 
 
 const router = createBrowserRouter([
 {
   path: "/",
-  element: <App />,
+  element: <MainLayout />,
+  children: [
+    {
+      index: true,
+      element: <Homepage />
+
+    },
+    {
+      path: "/books",
+      element : <Books />
+
+    }
+  ]
 }
 
 
